@@ -1,7 +1,3 @@
-using Cart;
-using Catalog;
-using Order;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -15,9 +11,6 @@ var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 
-app
-    .UseCatalogModule()
-    .UseCartModule()
-    .UseOrderModule();
+app.UseCatalogModule().UseCartModule().UseOrderModule();
 
 app.Run();
