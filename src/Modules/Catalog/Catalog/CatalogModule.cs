@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -7,7 +8,8 @@ public static class CatalogModule
 {
     public static IServiceCollection AddCatalogModule(
         this IServiceCollection services,
-        IConfiguration configuration)
+        IConfiguration configuration
+    )
     {
         // Register services for the Catalog module
         // services
@@ -16,5 +18,13 @@ public static class CatalogModule
         //     .AddApiServices();
 
         return services;
+    }
+
+    public static IApplicationBuilder UseCatalogModule(this IApplicationBuilder app)
+    {
+        // Configure the HTTP request pipeline for the Catalog module
+        // app.Use...
+
+        return app;
     }
 }

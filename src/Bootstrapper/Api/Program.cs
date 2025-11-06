@@ -15,4 +15,9 @@ var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 
+app
+    .UseCatalogModule()
+    .UseCartModule()
+    .UseOrderModule();
+
 app.Run();
